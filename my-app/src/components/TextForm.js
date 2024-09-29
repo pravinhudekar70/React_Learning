@@ -15,6 +15,10 @@ export default function TextForm(props) {
         console.log("handle on downClick");
         setText(text.toLowerCase());
     };
+    const handleClearClick = (event)=>{
+        console.log("handle on downClick");
+        setText('');
+    };
     return (
         <>
             <h2>{props.heading}</h2>
@@ -24,6 +28,12 @@ export default function TextForm(props) {
             <div className=" mt-3">
             <button className="btn btn-primary mx-2 " onClick ={handleUpClick} > Convert to UpperCase</button>
             <button className="btn btn-primary mx-2 " onClick={handleDownClick} >Convert to LowerCase </button>
+            <button className="btn btn-primary mx-2 " onClick={handleClearClick} >Clear </button>
+
+            </div>
+            <div className="container my-3" >
+                <h2>Your Text Summary</h2>
+                <p>{text.split(' ').length}words and {text.length} characters</p>
             </div>
         </>
     )
